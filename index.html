@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Deis - What's New (April 2014)?</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Gabriel Monroy">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="revealjs/css/reveal.min.css">
+		<link rel="stylesheet" href="revealjs/css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="revealjs/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="revealjs/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body style="font-family: helvetica">
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section data-background="img/DeisBackground.jpg">
+					<div style="background:white;color:black;padding:50px">
+						<h1 style="color:black">Deis.io</h1>
+						<h3 style="color:black">What's New</h3>
+						<p>
+							<small>Gabriel Monroy</a> / <a href="http://twitter.com/gabrtv">@gabrtv</a></small>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>About Deis</h2>
+					<p>
+						<ul>
+							<li>First Docker PaaS</li>
+							<li>"Private Heroku"</li>
+							<li>100% open source</li>
+							<li>~40 contributors, 4 full-time devs</li>
+							<li>Python &amp; Go</li>
+						</ul>
+					</p>
+					<p class="fragment">(prounounced DAY-iss)</p>
+				</section>
+
+				<section>
+					<h2>About Me</h2>
+					<p>
+						<ul>
+							<li>15+ years in IT ops and systems programming</li>
+							<li>Worked at Intuit, Temboo and as a freelance consultant</li>
+							<li>Early and frequent Docker contributor</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h1>Why Docker?</h1>
+					<ul class="fragment">
+						<li>Density</li>
+						<li>Portability</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Why Deis?</h1>
+					<p class="fragment">Docker is not enough</p>
+				</section>
+
+				<section>
+					<h1>Developer Workflow</h1>
+					<ul class="fragment">
+						<li>Create applications</li>
+						<li>Push code or Docker images</li>
+						<li>Set environment variables</li>
+						<li>Manage releases and rollbacks</li>
+						<li>Run ephemeral containers</li>
+						<li>View logs</li>
+						<li>Scale containers</li>
+						<li>Collaborate with a team</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Division of Responsibility</h1>
+					<ul class="fragment">
+						<li>Developers own the containers</li>
+						<li>Operations own the platform</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>What's New with Deis?</h1>
+				</section>
+
+				<section>
+                    <img src="img/CoreOS.png" class="stretched" style="border:none;background:white;"/>
+				</section>
+
+				<section>
+					<h1>How does it work?</h1>
+				</section>
+
+				<section>
+                    <img src="img/DeisArchitecturalDiagram.png" class="stretched" style="border:none;background:none;"/>
+				</section>
+
+				<section>
+                    <img src="img/DeisGitPush.png" class="stretched" style="border:none;background:none;"/>
+				</section>
+
+				<section>
+					<h1>Deploying Deis</h1>
+				</section>
+
+				<section>
+					<h2>Provision a Controller</h2>
+					<pre><code data-trim contenteditable>
+$ vagrant up                                         # local dev
+$ contrib/ec2/provision-ec2-cluster.sh               # ec2
+$ contrib/rackspace/provision-rackspace-cluster.sh   # rackspace
+					</code></pre>
+					<br/>
+
+					<h2>Register an Admin User</h2>
+					<pre><code data-trim contenteditable>
+$ pip install deis
+$ deis register deis-controller.fqdn
+					</code></pre>
+					<br/>
+
+					<h2>Configure a Cluster</h2>
+					<pre><code data-trim contenteditable>
+$ deis init dev deisapp.com --hosts=host1,host2,host3 --auth=~/.ssh/key.pem
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Unleash the Developers</h2>
+					<img src="img/DeveloperGuide.png" class="stretched" style="border:none;background:none;"/>
+				</section>
+
+				<section>
+					<h2>Operating Deis</h2>
+					<ul>
+						<li>SSL certificates</li>
+						<li>Drain logs</li>
+						<li>Configure monitoring</li>
+						<li>Scale hosts</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>What's Next?</h1>
+					<ul>
+						<li>Fleet API</li>
+						<li>CI/CD Pipelines</li>
+						<li>Service Gateway (add-ons)</li>
+						<li>Platform hardening</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Contributing</h1>
+				</section>
+
+				<section>
+					<h1>Questions?</h1>
+				</section>
+
+				<section>
+					<script type="text/javascript" src="https://asciinema.org/a/8905.js" id="asciicast-8905" data-size="medium" data-speed="2" async></script>			
+				</section>
+
+				<section>
+					<h2>Resources</h2>
+					<ul>
+						<li><a href="https://github.com/deis/deis">GitHub Project</a></li>
+						<li><a href="http://deis.io/overview/">Deis Overview</a></li>
+						<li><a href-"https://docs.deis.io/">Deis Documentation</a></li>
+						<li><a href="http://opdemand.com/">Commercial Support</a></li>
+					</ul>
+				</section>
+
+				<section data-background="img/DeisBackground.jpg"></section>
+
+			</div>
+
+		</div>
+
+		<script src="revealjs/lib/js/head.min.js"></script>
+		<script src="revealjs/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
